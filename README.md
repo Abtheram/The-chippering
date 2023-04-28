@@ -6,3 +6,23 @@ Game title: The chippering(The last tree) The purpose of the project is to give 
 
 
 Helping to code the timer for the games https://www.youtube.com/watch?v=CJeElAsOvzc 
+Backround for the py game https://www.askpython.com/python-modules/pygame-looping-background#:~:text=To%20add%20the%20background%20image,we%20will%20be%20using%20transform.
+Backround: 
+import pygame
+from pygame.locals import *
+pygame.init()
+width = 1000
+height = 500
+window = pygame.display.set_mode((width,height))
+bg_img = pygame.image.load('my image')
+bg_img = pygame.transform.scale(bg_img,(width,height))
+i = 0
+runing = True
+while runing:
+    window.blit(bg_img,(i,0))
+    i-=1
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            runing = False   
+    pygame.display.update()
+pygame.quit()
